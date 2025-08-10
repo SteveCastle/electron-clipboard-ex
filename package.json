@@ -5,7 +5,8 @@
   "main": "index.js",
   "os": [
     "darwin",
-    "win32"
+    "win32",
+    "linux"
   ],
   "types": "index.d.ts",
   "files": [

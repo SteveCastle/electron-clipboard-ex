@@ -1,15 +1,19 @@
-const {promisify} = require('util');
-const prebuildify = promisify(require('prebuildify'));
+const { promisify } = require("util");
+const prebuildify = promisify(require("prebuildify"));
 
 const platform = process.platform;
 
 const getSupportedArchs = () => {
-  if (platform === 'darwin') {
-    return ['x64', 'arm64'];
+  if (platform === "darwin") {
+    return ["x64", "arm64"];
   }
 
-  if (platform === 'win32') {
-    return ['x64', 'ia32'];
+  if (platform === "win32") {
+    return ["x64", "ia32"];
+  }
+
+  if (platform === "linux") {
+    return ["x64", "arm64", "arm"];
   }
 
   return [];

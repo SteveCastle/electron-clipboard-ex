@@ -58,6 +58,23 @@
             },
           }
         ],
+        [
+          'OS=="linux"',
+          {
+            "sources": [
+              "src/clipboard_linux.cc"
+            ],
+            "cflags": [
+              "<!@(pkg-config --cflags gtk+-3.0 gdk-pixbuf-2.0)",
+            ],
+            "cflags_cc": ["-std=c++17"],
+            'link_settings': {
+              'libraries': [
+                "<!@(pkg-config --libs gtk+-3.0 gdk-pixbuf-2.0)"
+              ]
+            }
+          }
+        ],
       ]
     }
   ]

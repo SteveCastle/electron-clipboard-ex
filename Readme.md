@@ -10,26 +10,28 @@ A node.js native addon designed to use with [electron](https://www.electronjs.or
 Read file paths copied from macOS Finder or Windows explorer:
 
 ```javascript
-const clipboardEx = require('electron-clipboard-ex');
+const clipboardEx = require("electron-clipboard-ex");
 const filePaths = clipboardEx.readFilePaths();
 ```
 
 Write file paths to clipboard:
 
 ```javascript
-const clipboardEx = require('electron-clipboard-ex');
+const clipboardEx = require("electron-clipboard-ex");
 clipboardEx.writeFilePaths(filePaths);
 ```
 
 Clear clipboard:
+
 ```javascript
-const clipboardEx = require('electron-clipboard-ex');
+const clipboardEx = require("electron-clipboard-ex");
 clipboardEx.clear();
 ```
 
 Save clipboard image as jpeg:
+
 ```javascript
-const clipboardEx = require('electron-clipboard-ex');
+const clipboardEx = require("electron-clipboard-ex");
 // sync
 clipboardEx.saveImageAsJpegSync(targetPath, compressFactor);
 // async
@@ -37,8 +39,9 @@ await clipboardEx.saveImageAsJpeg(targetPath, compressFactor);
 ```
 
 Save clipboard image as png:
+
 ```javascript
-const clipboardEx = require('electron-clipboard-ex');
+const clipboardEx = require("electron-clipboard-ex");
 // sync
 clipboardEx.saveImageAsPngSync(targetPath);
 // async
@@ -46,8 +49,9 @@ await clipboardEx.saveImageAsPng(targetPath);
 ```
 
 Put image into clipboard:
+
 ```javascript
-const clipboardEx = require('electron-clipboard-ex');
+const clipboardEx = require("electron-clipboard-ex");
 // sync
 clipboardEx.putImageSync(imagePath);
 // async
@@ -55,10 +59,12 @@ await clipboardEx.putImage(imagePath);
 ```
 
 Check if clipboard has an image in it:
+
 ```javascript
-const clipboardEx = require('electron-clipboard-ex');
+const clipboardEx = require("electron-clipboard-ex");
 clipboardEx.hasImage();
 ```
 
 ## Operating system support
-This library supports Windows and macOS. Linux is currently not supported, feel free to open a pull request if you need it.
+
+This library supports Windows, macOS, and Linux (GTK-based environments). On Linux, it uses GTK clipboard APIs with GDK-Pixbuf for image handling. Ensure `gtk+3` and `gdk-pixbuf` dev packages are installed when building from source.
